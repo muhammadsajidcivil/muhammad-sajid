@@ -765,7 +765,7 @@
   <h1 class="hero-name">
     MUHAMMAD<br><span class="accent">SAJID</span>
   </h1>
-  <div class="hero-title">B.E. Civil — UET Peshawar, 2026</div>
+  <div class="hero-title">BSc Civil Engineering — UET Peshawar, 2026</div>
   <p class="hero-desc">
     Structural analysis. Seismic engineering. Finite element modelling.
     Building what holds the world together —
@@ -841,7 +841,7 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Degree</span>
-        <span class="spec-val">B.E. Civil Engineering</span>
+        <span class="spec-val">BSc Civil Engineering</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">CGPA</span>
@@ -897,8 +897,6 @@
       <p class="skill-desc">Advanced nonlinear FEA including Concrete Damage Plasticity, cyclic loading simulations, and mesh convergence studies.</p>
       <div class="skill-tools">
         <span class="skill-tool">Abaqus</span>
-        <span class="skill-tool">OpenSees</span>
-        <span class="skill-tool">openseespy</span>
       </div>
     </div>
 
@@ -920,7 +918,6 @@
       <div class="skill-tools">
         <span class="skill-tool">AutoCAD</span>
         <span class="skill-tool">Revit</span>
-        <span class="skill-tool">SolidWorks</span>
       </div>
     </div>
 
@@ -942,7 +939,6 @@
       <div class="skill-tools">
         <span class="skill-tool">Excel</span>
         <span class="skill-tool">Pandas</span>
-        <span class="skill-tool">LaTeX</span>
       </div>
     </div>
 
@@ -981,8 +977,8 @@
           <div class="bar-track"><div class="bar-fill" style="--w:0.87"></div></div>
         </div>
         <div>
-          <div class="bar-label"><span>OpenSees</span><span>70%</span></div>
-          <div class="bar-track"><div class="bar-fill" style="--w:0.70"></div></div>
+          <div class="bar-label"><span>Data Analysis (Excel/Pandas)</span><span>80%</span></div>
+          <div class="bar-track"><div class="bar-fill" style="--w:0.80"></div></div>
         </div>
         <div>
           <div class="bar-label"><span>Research Writing</span><span>82%</span></div>
@@ -1180,10 +1176,10 @@
 
     <div class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="timeline-period">2023 – Present</div>
+      <div class="timeline-period">2025 – 2026</div>
       <div class="timeline-title">PRESIDENT — LHWS</div>
       <div class="timeline-org">Let's Help Welfare Society · UET Peshawar</div>
-      <p class="timeline-desc">Leading community welfare initiatives including plantation drives, cleanliness campaigns, and environmental projects in collaboration with external partners and government organisations.</p>
+      <p class="timeline-desc">Led community welfare initiatives including plantation drives, cleanliness campaigns, and environmental projects in collaboration with external partners and government organisations.</p>
       <div class="timeline-pills">
         <span class="pill">Leadership</span>
         <span class="pill">Community</span>
@@ -1216,8 +1212,8 @@
     <div class="section-line"></div>
   </div>
   <p class="gallery-intro reveal">
-    A running record of work in progress — FYP model renders, HEC-TDF test rigs,
-    Mitacs lab shots from UNBC, and LHWS field activity. Filter by category or add new entries below.
+    A running record of work in progress — FYP model renders, HEC-TDF test results,
+    Mitacs lab shots from UNBC, and LHWS field activity. Filter by category to browse.
   </p>
 
   <div class="gallery-tabs reveal" id="galleryTabs">
@@ -1229,36 +1225,38 @@
     <button class="gtab" data-filter="other">Other</button>
   </div>
 
-  <div class="gallery-upload reveal" id="dropZone">
-    <div class="gu-left">
-      <div class="gu-title">Add to the log</div>
-      <div class="gu-sub">Drag a photo in, or click "Choose File" — then tag and caption it.</div>
+  <div id="adminPanel" style="display:none;">
+    <div class="gallery-upload reveal" id="dropZone">
+      <div class="gu-left">
+        <div class="gu-title">Add to the log</div>
+        <div class="gu-sub">Drag a photo in, or click "Choose File" — then tag and caption it.</div>
+      </div>
+      <div class="gu-controls">
+        <select class="gu-select" id="gCategory">
+          <option value="fyp">FYP</option>
+          <option value="hectdf">HEC-TDF</option>
+          <option value="mitacs">Mitacs · UNBC</option>
+          <option value="lhws">LHWS / Community</option>
+          <option value="other">Other</option>
+        </select>
+        <input class="gu-input" id="gCaption" type="text" placeholder="Short caption..." maxlength="90">
+        <input type="file" id="gFile" accept="image/*" style="display:none">
+        <button class="gu-btn" id="gChoose">Choose File</button>
+      </div>
     </div>
-    <div class="gu-controls">
-      <select class="gu-select" id="gCategory">
-        <option value="fyp">FYP</option>
-        <option value="hectdf">HEC-TDF</option>
-        <option value="mitacs">Mitacs · UNBC</option>
-        <option value="lhws">LHWS / Community</option>
-        <option value="other">Other</option>
-      </select>
-      <input class="gu-input" id="gCaption" type="text" placeholder="Short caption..." maxlength="90">
-      <input type="file" id="gFile" accept="image/*" style="display:none">
-      <button class="gu-btn" id="gChoose">Choose File</button>
+    <div class="gu-note">
+      Photos you add here render instantly and save to this browser (localStorage), so you can preview and
+      curate the log yourself. Because this is a static HTML site with no server, they won't yet be visible
+      to other visitors — click "Export Gallery Data" (bottom of this section) after curating, and drop the
+      downloaded file + images into your project folder as described in the code comments, so the log
+      becomes permanent and visible to everyone.
     </div>
-  </div>
-  <div class="gu-note">
-    Photos you add here render instantly and save to this browser (localStorage), so you can preview and
-    curate the log yourself. Because this is a static HTML site with no server, they won't yet be visible
-    to other visitors — click "Export Gallery Data" (bottom of this section) after curating, and drop the
-    downloaded file + images into your project folder as described in the code comments, so the log
-    becomes permanent and visible to everyone.
   </div>
 
   <div class="gallery-grid reveal" id="galleryGrid"></div>
   <div class="gallery-empty" id="galleryEmpty">NO ENTRIES YET IN THIS CATEGORY — ADD YOUR FIRST PHOTO ABOVE.</div>
 
-  <div style="margin-top:32px; display:flex; gap:16px; flex-wrap:wrap;">
+  <div id="adminActions" style="display:none; margin-top:32px; gap:16px; flex-wrap:wrap;">
     <button class="btn-secondary" id="gExport" style="font-family:var(--mono); cursor:none;">Export Gallery Data</button>
     <button class="btn-secondary" id="gClear" style="font-family:var(--mono); cursor:none;">Clear Local Preview</button>
   </div>
@@ -1377,6 +1375,13 @@
   /* ---- GALLERY ---- */
   (function(){
     const STORAGE_KEY = 'sajid_gallery_items_v1';
+    const ADMIN_KEY = 'sajid2026edit'; // change this to your own secret, then bookmark ?admin=yoursecret
+    const isAdmin = new URLSearchParams(window.location.search).get('admin') === ADMIN_KEY;
+    if(isAdmin){
+      document.getElementById('adminPanel').style.display = 'block';
+      document.getElementById('adminActions').style.display = 'flex';
+    }
+
     const grid   = document.getElementById('galleryGrid');
     const empty  = document.getElementById('galleryEmpty');
     const tabs   = document.getElementById('galleryTabs');
@@ -1408,7 +1413,7 @@
         el.innerHTML = `
           <img src="${item.src}" alt="${item.caption ? item.caption.replace(/"/g,'&quot;') : 'Gallery photo'}">
           <span class="gitem-badge">${labels[item.category] || 'Other'}</span>
-          <button class="gitem-del" data-id="${item.id}" title="Remove">&times;</button>
+          ${isAdmin ? `<button class="gitem-del" data-id="${item.id}" title="Remove">&times;</button>` : ''}
           ${item.caption ? `<div class="gitem-cap">${item.caption}</div>` : ''}
         `;
         grid.appendChild(el);
