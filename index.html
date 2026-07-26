@@ -488,6 +488,95 @@
       color: var(--orange2);
     }
 
+    /* ===================== GALLERY ===================== */
+    #gallery { background: var(--navy2); }
+    .gallery-intro {
+      max-width: 620px; font-size:14px; line-height:1.8;
+      color: var(--concrete2); margin-bottom:48px;
+    }
+    .gallery-tabs {
+      display:flex; flex-wrap:wrap; gap:10px; margin-bottom:36px;
+    }
+    .gtab {
+      font-family: var(--mono); font-size:10px; letter-spacing:2px;
+      text-transform:uppercase; padding:10px 20px;
+      border:1px solid rgba(77,232,244,0.15);
+      background:transparent; color:var(--concrete2);
+      cursor:none; transition: all 0.2s;
+    }
+    .gtab:hover { border-color: var(--cyan); color: var(--cyan); }
+    .gtab.active { background: var(--cyan); border-color: var(--cyan); color: var(--navy); }
+
+    .gallery-upload {
+      border: 1px dashed rgba(255,107,26,0.35);
+      background: rgba(255,107,26,0.03);
+      padding: 32px; margin-bottom:48px;
+      display:flex; flex-wrap:wrap; gap:20px; align-items:center;
+      justify-content:space-between;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .gallery-upload.dragover { border-color: var(--orange); background: rgba(255,107,26,0.08); }
+    .gu-left { display:flex; flex-direction:column; gap:6px; }
+    .gu-title {
+      font-family: var(--display); font-size:22px; letter-spacing:1px; color:var(--white);
+    }
+    .gu-sub { font-family: var(--mono); font-size:11px; color:var(--concrete2); letter-spacing:0.5px; }
+    .gu-controls { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+    .gu-select, .gu-input {
+      font-family: var(--mono); font-size:11px; letter-spacing:1px;
+      background: var(--navy); color: var(--concrete);
+      border:1px solid rgba(77,232,244,0.2);
+      padding:10px 14px; outline:none;
+    }
+    .gu-input { width:200px; }
+    .gu-btn {
+      font-family: var(--mono); font-size:11px; letter-spacing:2px; text-transform:uppercase;
+      padding:12px 26px; background: var(--orange); color: var(--navy);
+      border:none; cursor:none; transition: transform 0.2s;
+    }
+    .gu-btn:hover { transform: translateY(-2px); }
+    .gu-note {
+      font-family: var(--mono); font-size:9px; color: rgba(191,200,214,0.45);
+      letter-spacing:1px; margin-top:14px; line-height:1.6; max-width:100%;
+    }
+
+    .gallery-grid {
+      display:grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr));
+      gap:20px;
+    }
+    .gitem {
+      position:relative; background: var(--navy);
+      border:1px solid rgba(77,232,244,0.1);
+      overflow:hidden; cursor:none;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .gitem:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+    .gitem img { width:100%; height:200px; object-fit:cover; display:block; }
+    .gitem-badge {
+      position:absolute; top:12px; left:12px;
+      font-family: var(--mono); font-size:9px; letter-spacing:2px; text-transform:uppercase;
+      padding:4px 10px; background: var(--cyan); color: var(--navy);
+    }
+    .gitem-del {
+      position:absolute; top:10px; right:10px; width:26px; height:26px;
+      background: rgba(7,9,26,0.75); color:var(--concrete);
+      border:1px solid rgba(255,255,255,0.2);
+      display:flex; align-items:center; justify-content:center;
+      font-family: var(--mono); font-size:13px; cursor:none;
+      opacity:0; transition: opacity 0.2s;
+    }
+    .gitem:hover .gitem-del { opacity:1; }
+    .gitem-cap {
+      padding:14px 16px;
+      font-size:12.5px; line-height:1.6; color:var(--concrete2);
+    }
+    .gallery-empty {
+      font-family: var(--mono); font-size:12px; letter-spacing:1px;
+      color: var(--concrete2); padding: 40px 0; text-align:center;
+      border:1px dashed rgba(191,200,214,0.15);
+      display: none;
+    }
+
     /* ===================== CONTACT ===================== */
     #contact {
       background: var(--navy2);
@@ -598,7 +687,8 @@
     <li><a href="#skills"     data-num="02">Skills</a></li>
     <li><a href="#projects"   data-num="03">Projects</a></li>
     <li><a href="#experience" data-num="04">Experience</a></li>
-    <li><a href="#contact"    data-num="05">Contact</a></li>
+    <li><a href="#gallery"    data-num="05">Gallery</a></li>
+    <li><a href="#contact"    data-num="06">Contact</a></li>
   </ul>
   <a class="nav-cta" href="#contact">Hire Me</a>
 </nav>
@@ -668,10 +758,14 @@
   <div class="coord" style="top:130px;right:60px;">34°01'N / 71°34'E</div>
 
   <div class="hero-tag">Civil & Structural Engineer</div>
+  <div style="font-family:var(--mono); font-size:10.5px; letter-spacing:2px; color:var(--orange2); text-transform:uppercase; margin-bottom:20px; display:flex; align-items:center; gap:8px; opacity:0; animation: fadeUp 0.7s 0.4s ease forwards;">
+    <span style="width:6px;height:6px;background:var(--orange);border-radius:50%;display:inline-block;animation:blink 1.6s infinite;"></span>
+    Currently — Mitacs Globalink Intern, UNBC Spark Lab, Canada
+  </div>
   <h1 class="hero-name">
     MUHAMMAD<br><span class="accent">SAJID</span>
   </h1>
-  <div class="hero-title">B.Sc. Civil Engineering - UET Peshawar</div>
+  <div class="hero-title">B.E. Civil — UET Peshawar, 2026</div>
   <p class="hero-desc">
     Structural analysis. Seismic engineering. Finite element modelling.
     Building what holds the world together —
@@ -685,7 +779,7 @@
 
   <div class="hero-stats">
     <div class="stat-item">
-      <div class="stat-val">3.62</div>
+      <div class="stat-val">3.6</div>
       <div class="stat-label">CGPA / 4.00</div>
     </div>
     <div class="stat-item">
@@ -695,6 +789,11 @@
     <div class="stat-item">
       <div class="stat-val">5+</div>
       <div class="stat-label">FEA Software</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val">2026</div>
+      <div class="stat-label">Mitacs Intern · UNBC</div>
+    </div>
   </div>
 </section>
 
@@ -708,19 +807,24 @@
   <div class="about-grid">
     <div class="about-text reveal">
       <p>
-        I am a final-year Civil Engineering undergraduate at
-        <strong>UET Peshawar</strong> (8th Semester), with a CGPA of
-        <strong>3.62/4.00</strong>, specialising in structural engineering,
-        finite element analysis, and seismic design.
+        I am a Civil Engineering graduate of <strong>UET Peshawar</strong>
+        (Batch 2022–2026), with a CGPA of <strong>3.6/4.00</strong>,
+        specialising in structural engineering, finite element analysis,
+        and seismic design.
       </p>
       <p>
-        Currently serving as a <strong>Research Assistant</strong> on an
+        I served as a <strong>Research Assistant</strong> on an
         HEC Technology Development Fund project, evaluating the seismic
-        performance of fly ash brick masonry structures. My FYP involves
-        advanced numerical modelling of a 3-storey RC building using the
+        performance of fly ash brick masonry structures. My Final Year Project
+        involved advanced numerical modelling of a 3-storey RC building using the
         <strong>Concrete Damage Plasticity</strong> model in Abaqus.
       </p>
-      
+      <p>
+        I am currently a <strong>Mitacs Globalink Research Intern</strong>
+        at the University of Northern British Columbia (2026), developing a
+        3D-printed physical demonstration model for the MechRV3D
+        seismic-resilient CLT high-rise structural mechanism.
+      </p>
       <div class="about-tags">
         <span class="tag">Seismic Engineering</span>
         <span class="tag">FEM / FEA</span>
@@ -737,15 +841,23 @@
       </div>
       <div class="spec-row">
         <span class="spec-key">Degree</span>
-        <span class="spec-val">B.SC. Civil Engineering</span>
+        <span class="spec-val">B.E. Civil Engineering</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">CGPA</span>
-        <span class="spec-val highlight">3.62 / 4.00</span>
+        <span class="spec-val highlight">3.6 / 4.00</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">Specialisation</span>
         <span class="spec-val">Structural / Seismic</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Internship 2026</span>
+        <span class="spec-val highlight">Mitacs Globalink · UNBC</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Supervisor</span>
+        <span class="spec-val">Dr. Fei Tong</span>
       </div>
       <div class="spec-row">
         <span class="spec-key">FYP Supervisor</span>
@@ -785,6 +897,8 @@
       <p class="skill-desc">Advanced nonlinear FEA including Concrete Damage Plasticity, cyclic loading simulations, and mesh convergence studies.</p>
       <div class="skill-tools">
         <span class="skill-tool">Abaqus</span>
+        <span class="skill-tool">OpenSees</span>
+        <span class="skill-tool">openseespy</span>
       </div>
     </div>
 
@@ -806,9 +920,10 @@
       <div class="skill-tools">
         <span class="skill-tool">AutoCAD</span>
         <span class="skill-tool">Revit</span>
-        <span class="skill-tool">Navisworks</span>
+        <span class="skill-tool">SolidWorks</span>
       </div>
     </div>
+
     <div class="skill-card reveal">
       <span class="skill-icon">🐍</span>
       <div class="skill-title">ENGINEERING CODE</div>
@@ -827,10 +942,9 @@
       <div class="skill-tools">
         <span class="skill-tool">Excel</span>
         <span class="skill-tool">Pandas</span>
+        <span class="skill-tool">LaTeX</span>
       </div>
     </div>
-
-    
 
   </div>
 
@@ -865,6 +979,10 @@
         <div>
           <div class="bar-label"><span>RC Design (ACI/BCP)</span><span>87%</span></div>
           <div class="bar-track"><div class="bar-fill" style="--w:0.87"></div></div>
+        </div>
+        <div>
+          <div class="bar-label"><span>OpenSees</span><span>70%</span></div>
+          <div class="bar-track"><div class="bar-fill" style="--w:0.70"></div></div>
         </div>
         <div>
           <div class="bar-label"><span>Research Writing</span><span>82%</span></div>
@@ -960,7 +1078,34 @@
     </div>
 
     <!-- Project 3 -->
-    
+    <div class="project-card reveal">
+      <div class="project-visual" style="background:#0d1230;">
+        <svg class="project-svg" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+          <!-- CLT building cross-section -->
+          <rect x="120" y="160" width="160" height="20" fill="none" stroke="#4de8f4" stroke-width="2"/>
+          <rect x="135" y="130" width="130" height="32" fill="none" stroke="#4de8f4" stroke-width="1.5"/>
+          <rect x="150" y="100" width="100" height="32" fill="none" stroke="#4de8f4" stroke-width="1.5"/>
+          <rect x="160" y="70" width="80" height="32"  fill="none" stroke="#4de8f4" stroke-width="1.5"/>
+          <rect x="170" y="40" width="60" height="32"  fill="none" stroke="#4de8f4" stroke-width="1.5"/>
+          <!-- Spring symbols for MechRV3D -->
+          <path d="M100,160 C90,155 110,145 100,140 C90,135 110,125 100,120" stroke="#ff6b1a" stroke-width="2" fill="none"/>
+          <path d="M300,160 C310,155 290,145 300,140 C310,135 290,125 300,120" stroke="#ff6b1a" stroke-width="2" fill="none"/>
+          <text x="200" y="192" font-family="monospace" font-size="9" fill="#4de8f4" text-anchor="middle" letter-spacing="2">MechRV3D — CLT HIGH-RISE SYSTEM</text>
+        </svg>
+        <span class="project-badge">Mitacs</span>
+      </div>
+      <div class="project-body">
+        <div class="project-num">// 03</div>
+        <div class="project-title">MechRV3D MODEL</div>
+        <p class="project-desc">3D-printed physical demonstration model of the MechRV3D seismic-resilient structural mechanism for CLT high-rise buildings, along with CAD files and full technical documentation. — UNBC, Canada.</p>
+        <div class="project-tags">
+          <span class="project-tag">CLT</span>
+          <span class="project-tag">3D Printing</span>
+          <span class="project-tag">Seismic</span>
+          <span class="project-tag">CAD</span>
+        </div>
+      </div>
+    </div>
 
     <!-- Project 4 -->
     <div class="project-card reveal">
@@ -1008,6 +1153,20 @@
 
     <div class="timeline-item">
       <div class="timeline-dot"></div>
+      <div class="timeline-period">Summer 2026</div>
+      <div class="timeline-title">MITACS GLOBALINK INTERN</div>
+      <div class="timeline-org">University of Northern British Columbia · Prince George, Canada</div>
+      <p class="timeline-desc">Building a 3D-printed physical demonstration model for the MechRV3D seismic-resilient mechanism for CLT high-rise buildings, supervised by Dr. Fei Tong. Producing CAD files and comprehensive technical documentation.</p>
+      <div class="timeline-pills">
+        <span class="pill">CLT Structures</span>
+        <span class="pill">Seismic Resilience</span>
+        <span class="pill">3D Printing</span>
+        <span class="pill">Canada</span>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
       <div class="timeline-period">2024 – Present</div>
       <div class="timeline-title">RESEARCH ASSISTANT</div>
       <div class="timeline-org">HEC Technology Development Fund · UET Peshawar</div>
@@ -1021,10 +1180,10 @@
 
     <div class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="timeline-period">2025 – Present</div>
+      <div class="timeline-period">2023 – Present</div>
       <div class="timeline-title">PRESIDENT — LHWS</div>
       <div class="timeline-org">Let's Help Welfare Society · UET Peshawar</div>
-      <p class="timeline-desc">Led community welfare initiatives including plantation drives, cleanliness campaigns, orphanage visits, educational seminars, and study trips. Coordinated events and collaborative activities, managed teams and logistics, and contributed to promoting social responsibility, community engagement, and student welfare through impactful initiatives.</p>
+      <p class="timeline-desc">Leading community welfare initiatives including plantation drives, cleanliness campaigns, and environmental projects in collaboration with external partners and government organisations.</p>
       <div class="timeline-pills">
         <span class="pill">Leadership</span>
         <span class="pill">Community</span>
@@ -1034,7 +1193,7 @@
 
     <div class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="timeline-period">2025 – 2026</div>
+      <div class="timeline-period">2024 – 2025</div>
       <div class="timeline-title">FINAL YEAR PROJECT</div>
       <div class="timeline-org">Supervised by Prof. Dr. Khan Shahzada & Dr. Zeeshan Ahmad · UET Peshawar</div>
       <p class="timeline-desc">Nonlinear FEA of a 3-storey RC building with masonry infill under cyclic lateral loading using the Concrete Damage Plasticity model in Abaqus. Full model calibration and validation against experimental data.</p>
@@ -1049,30 +1208,90 @@
   </div>
 </section>
 
+<!-- =================== GALLERY =================== -->
+<section id="gallery">
+  <div class="section-header reveal">
+    <span class="section-num">// 05</span>
+    <h2 class="section-title">SITE LOG</h2>
+    <div class="section-line"></div>
+  </div>
+  <p class="gallery-intro reveal">
+    A running record of work in progress — FYP model renders, HEC-TDF test rigs,
+    Mitacs lab shots from UNBC, and LHWS field activity. Filter by category or add new entries below.
+  </p>
+
+  <div class="gallery-tabs reveal" id="galleryTabs">
+    <button class="gtab active" data-filter="all">All</button>
+    <button class="gtab" data-filter="fyp">FYP</button>
+    <button class="gtab" data-filter="hectdf">HEC-TDF</button>
+    <button class="gtab" data-filter="mitacs">Mitacs · UNBC</button>
+    <button class="gtab" data-filter="lhws">LHWS / Community</button>
+    <button class="gtab" data-filter="other">Other</button>
+  </div>
+
+  <div class="gallery-upload reveal" id="dropZone">
+    <div class="gu-left">
+      <div class="gu-title">Add to the log</div>
+      <div class="gu-sub">Drag a photo in, or click "Choose File" — then tag and caption it.</div>
+    </div>
+    <div class="gu-controls">
+      <select class="gu-select" id="gCategory">
+        <option value="fyp">FYP</option>
+        <option value="hectdf">HEC-TDF</option>
+        <option value="mitacs">Mitacs · UNBC</option>
+        <option value="lhws">LHWS / Community</option>
+        <option value="other">Other</option>
+      </select>
+      <input class="gu-input" id="gCaption" type="text" placeholder="Short caption..." maxlength="90">
+      <input type="file" id="gFile" accept="image/*" style="display:none">
+      <button class="gu-btn" id="gChoose">Choose File</button>
+    </div>
+  </div>
+  <div class="gu-note">
+    Photos you add here render instantly and save to this browser (localStorage), so you can preview and
+    curate the log yourself. Because this is a static HTML site with no server, they won't yet be visible
+    to other visitors — click "Export Gallery Data" (bottom of this section) after curating, and drop the
+    downloaded file + images into your project folder as described in the code comments, so the log
+    becomes permanent and visible to everyone.
+  </div>
+
+  <div class="gallery-grid reveal" id="galleryGrid"></div>
+  <div class="gallery-empty" id="galleryEmpty">NO ENTRIES YET IN THIS CATEGORY — ADD YOUR FIRST PHOTO ABOVE.</div>
+
+  <div style="margin-top:32px; display:flex; gap:16px; flex-wrap:wrap;">
+    <button class="btn-secondary" id="gExport" style="font-family:var(--mono); cursor:none;">Export Gallery Data</button>
+    <button class="btn-secondary" id="gClear" style="font-family:var(--mono); cursor:none;">Clear Local Preview</button>
+  </div>
+</section>
+
 <!-- =================== CONTACT =================== -->
 <section id="contact">
   <div class="section-header reveal" style="justify-content:center;text-align:center;flex-direction:column;align-items:center;">
-    <span class="section-num" style="margin-bottom:16px;">// 05</span>
+    <span class="section-num" style="margin-bottom:16px;">// 06</span>
   </div>
   <div class="contact-intro reveal">
     LET'S<br><span>BUILD</span><br>SOMETHING.
   </div>
   <p class="contact-sub reveal">
-    Passionate about engineering innovation and research-driven solutions. 
-    Seeking funded MASc/PhD opportunities and collaborative projects with global impact.
+    Open to graduate research positions, funded MASc/PhD opportunities in Canada,
+    and engineering collaborations worldwide.
   </p>
   <div class="contact-links reveal">
-    <a class="contact-link" href="mailto:22pwciv5979@uetpeshawar.edu.pk">
+    <a class="contact-link" href="mailto:muhammad.sajid.ce1@gmail.com">
       <span class="lbl">EMAIL</span>
+      muhammad.sajid.ce1@gmail.com
+    </a>
+    <a class="contact-link" href="mailto:22pwciv5979@uetpeshawar.edu.pk">
+      <span class="lbl">UNIVERSITY EMAIL</span>
       22pwciv5979@uetpeshawar.edu.pk
     </a>
-    <a class="contact-link" href="https://www.linkedin.com/in/muhammad-sajid-2829642a5/" target="_blank">
+    <a class="contact-link" href="https://linkedin.com/in/muhammad-sajid" target="_blank">
       <span class="lbl">LINKEDIN</span>
-      Muhammad Sajid
+      muhammad-sajid
     </a>
-    <a class="contact-link" href="https://github.com/muhammadsajidcivil" target="_blank">
+    <a class="contact-link" href="https://github.com/muhammad-sajid" target="_blank">
       <span class="lbl">GITHUB</span>
-      Muhammad Sajid
+      muhammad-sajid
     </a>
     <a class="contact-link" href="#">
       <span class="lbl">LOCATION</span>
@@ -1154,6 +1373,118 @@
 
   /* ---- Typing cursor ---- */
   // already CSS animated
+
+  /* ---- GALLERY ---- */
+  (function(){
+    const STORAGE_KEY = 'sajid_gallery_items_v1';
+    const grid   = document.getElementById('galleryGrid');
+    const empty  = document.getElementById('galleryEmpty');
+    const tabs   = document.getElementById('galleryTabs');
+    const fileInput = document.getElementById('gFile');
+    const chooseBtn = document.getElementById('gChoose');
+    const catSelect  = document.getElementById('gCategory');
+    const capInput   = document.getElementById('gCaption');
+    const dropZone   = document.getElementById('dropZone');
+    const exportBtn  = document.getElementById('gExport');
+    const clearBtn   = document.getElementById('gClear');
+
+    const labels = { fyp:'FYP', hectdf:'HEC-TDF', mitacs:'Mitacs · UNBC', lhws:'LHWS', other:'Other' };
+    let activeFilter = 'all';
+
+    function load(){
+      try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
+      catch(e){ return []; }
+    }
+    function save(items){ localStorage.setItem(STORAGE_KEY, JSON.stringify(items)); }
+
+    function render(){
+      const items = load();
+      const visible = activeFilter === 'all' ? items : items.filter(i => i.category === activeFilter);
+      grid.innerHTML = '';
+      empty.style.display = visible.length ? 'none' : 'block';
+      visible.slice().reverse().forEach(item=>{
+        const el = document.createElement('div');
+        el.className = 'gitem';
+        el.innerHTML = `
+          <img src="${item.src}" alt="${item.caption ? item.caption.replace(/"/g,'&quot;') : 'Gallery photo'}">
+          <span class="gitem-badge">${labels[item.category] || 'Other'}</span>
+          <button class="gitem-del" data-id="${item.id}" title="Remove">&times;</button>
+          ${item.caption ? `<div class="gitem-cap">${item.caption}</div>` : ''}
+        `;
+        grid.appendChild(el);
+      });
+    }
+
+    tabs.addEventListener('click', e=>{
+      const btn = e.target.closest('.gtab');
+      if(!btn) return;
+      tabs.querySelectorAll('.gtab').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilter = btn.dataset.filter;
+      render();
+    });
+
+    grid.addEventListener('click', e=>{
+      const del = e.target.closest('.gitem-del');
+      if(!del) return;
+      const items = load().filter(i => String(i.id) !== del.dataset.id);
+      save(items);
+      render();
+    });
+
+    function addFile(file){
+      if(!file || !file.type.startsWith('image/')) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        const items = load();
+        items.push({
+          id: Date.now() + Math.random().toString(16).slice(2),
+          src: reader.result,
+          category: catSelect.value,
+          caption: capInput.value.trim(),
+          added: new Date().toISOString()
+        });
+        save(items);
+        capInput.value = '';
+        render();
+      };
+      reader.readAsDataURL(file);
+    }
+
+    chooseBtn.addEventListener('click', () => fileInput.click());
+    fileInput.addEventListener('change', e => addFile(e.target.files[0]));
+
+    ['dragenter','dragover'].forEach(evt=>{
+      dropZone.addEventListener(evt, e=>{ e.preventDefault(); dropZone.classList.add('dragover'); });
+    });
+    ['dragleave','drop'].forEach(evt=>{
+      dropZone.addEventListener(evt, e=>{ e.preventDefault(); dropZone.classList.remove('dragover'); });
+    });
+    dropZone.addEventListener('drop', e=>{
+      const file = e.dataTransfer.files && e.dataTransfer.files[0];
+      addFile(file);
+    });
+
+    exportBtn.addEventListener('click', () => {
+      const items = load();
+      if(!items.length){ alert('No entries to export yet — add a few photos first.'); return; }
+      const blob = new Blob([JSON.stringify(items, null, 2)], { type:'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'gallery-data.json';
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+
+    clearBtn.addEventListener('click', () => {
+      if(confirm('Clear all locally-previewed gallery photos from this browser?')){
+        localStorage.removeItem(STORAGE_KEY);
+        render();
+      }
+    });
+
+    render();
+  })();
 
   /* ---- Scanline flash on load ---- */
   const scanEl = document.createElement('div');
